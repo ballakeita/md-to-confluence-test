@@ -1,5 +1,9 @@
 name: Publish Markdown to Confluence
-on: workflow_dispatch
+
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   publish:
@@ -9,17 +13,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Publish Markdown to Confluence
+        uses: atlassian/markdown-to-confluence@v1.6.0
         with:
-          node-version: 20
-
-      - name: Install dependencies
-        run: npm install markdown-it axios
-
-      - name: Run publish script
-        run: node scripts/publish.js
+          config-file: confluence.json
         env:
-          CONFLUENCE_URL: ${{ secrets.CONFLUENCE_URL }}
-          CONFLUENCE_USER: ${{ secrets.CONFLUENCE_USER }}
           CONFLUENCE_API_TOKEN: ${{ secrets.CONFLUENCE_API_TOKEN }}
