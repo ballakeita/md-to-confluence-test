@@ -8,7 +8,7 @@ const CONFLUENCE_URL = process.env.CONFLUENCE_URL;
 const CONFLUENCE_USER = process.env.CONFLUENCE_USER;
 const CONFLUENCE_API_TOKEN = process.env.CONFLUENCE_API_TOKEN;
 
-const SPACE_KEY = "TST"; // 🔧 à adapter
+const SPACE_KEY = "MFS"; // 🔧 à adapter
 const AUTH = {
   username: CONFLUENCE_USER,
   password: CONFLUENCE_API_TOKEN
@@ -32,7 +32,8 @@ async function uploadPage(title, html) {
       { auth: AUTH, headers: { "Content-Type": "application/json" } }
     );
 
-    console.log(`✅ Page "${title}" créée (${response.status})`);
+    console.log(`✅ Page "${title}" créée : ${CONFLUENCE_URL}${response.data._links.webui}`);
+
   } catch (err) {
     console.error(`❌ Erreur pour ${title}:`, err.response?.data || err.message);
   }
