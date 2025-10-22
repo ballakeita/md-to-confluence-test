@@ -2,5 +2,6 @@
   "confluenceBaseUrl": "https://ballakei070.atlassian.net",
   "confluenceParentId": "",
   "atlassianUserName": "ballakei070@gmail.com",
-  "folderToPublish": "docs"
+  "folderToPublish": "docs",
+  "contentRoot": "/docs"
 }
