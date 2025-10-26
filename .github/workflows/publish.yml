@@ -1,7 +1,6 @@
 name: Publish Markdown to Confluence
 
 on: workflow_dispatch
-
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -11,8 +10,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Publish Markdown to Confluence
-        uses: markdown-confluence/publish@v1
+        uses: TTengs/MarkdownToConfluence@v3     # version selon doc :contentReference[oaicite:2]{index=2}
         with:
-          configFile: confluence.json
-        env:
-          ATLASSIAN_API_TOKEN: ${{ secrets.ATLASSIAN_API_TOKEN }}
+          fileslocation: 'docs'                 # dossier contenant tes fichiers .md
+          confluence_url: ${{ secrets.CONFLUENCE_URL }}
+          confluence_space_key: 'MFS'
+          auth_username: ${{ secrets.CONFLUENCE_USER }}
+          auth_api_token: ${{ secrets.CONFLUENCE_API_TOKEN }}
+          should_upload: true                    # optionnel
+          is_preview: false                      # optionnel
