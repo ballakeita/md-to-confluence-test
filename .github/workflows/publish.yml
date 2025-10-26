@@ -1,7 +1,6 @@
 name: Publish Markdown to Confluence
 
-on:
-  workflow_dispatch:  # bouton Manuel dans Github Actions
+on: workflow_dispatch  # bouton Manuel dans Github Actions
 
 jobs:
   publish:
