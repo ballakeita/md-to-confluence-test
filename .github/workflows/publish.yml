@@ -1,6 +1,8 @@
 name: Publish Markdown to Confluence
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:  # bouton Manuel dans Github Actions
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -8,9 +10,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+      
       - name: Publish Markdown to Confluence
-        uses: TTengs/MarkdownToConfluence@v3     # version selon doc :contentReference[oaicite:2]{index=2}
+        uses: TTengs/MarkdownToConfluence@v3
         with:
           configFile: .confluence.json
           atlassianApiToken: ${{ secrets.ATLASSIAN_API_TOKEN }}

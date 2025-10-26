@@ -1,7 +1,7 @@
 {
-  "confluenceBaseUrl": "https://ballakei070.atlassian.net",
-  "confluenceParentId": "229377",
-  "atlassianUserName": "ballakei070@gmail.com",
+  "confluenceBaseUrl": "https://ballakei070.atlassian.net/wiki",
+  "confluenceParentId": "229377", 
+  "atlassianUserName": "ton-email-atlassian@example.com",
   "folderToPublish": "docs",
   "contentRoot": "/docs"
 }
