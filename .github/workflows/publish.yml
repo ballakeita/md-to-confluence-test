@@ -1,9 +1,6 @@
 name: Publish Markdown to Confluence
 
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
 
 jobs:
   publish:
