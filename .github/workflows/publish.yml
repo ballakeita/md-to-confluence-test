@@ -12,10 +12,5 @@ jobs:
       - name: Publish Markdown to Confluence
         uses: TTengs/MarkdownToConfluence@v3     # version selon doc :contentReference[oaicite:2]{index=2}
         with:
-          fileslocation: 'docs'                 # dossier contenant tes fichiers .md
-          confluence_url: ${{ secrets.CONFLUENCE_URL }}
-          confluence_space_key: 'MFS'
-          auth_username: ${{ secrets.CONFLUENCE_USER }}
-          auth_api_token: ${{ secrets.CONFLUENCE_API_TOKEN }}
-          should_upload: true                    # optionnel
-          is_preview: false                      # optionnel
+          configFile: .confluence.json
+          atlassianApiToken: ${{ secrets.ATLASSIAN_API_TOKEN }}
