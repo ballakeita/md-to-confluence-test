@@ -1,0 +1,26 @@
+{
+  "name": "md-to-confluence-test",
+  "version": "1.0.0",
+  "description": "Copier automatiquement des fichiers Markdown",
+  "main": "publish.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ballakeita/md-to-confluence-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ballakeita/md-to-confluence-test/issues"
+  },
+  "homepage": "https://github.com/ballakeita/md-to-confluence-test#readme",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "markdown-to-html": "^0.0.13"
+  }
+}

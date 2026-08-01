@@ -1,0 +1,17 @@
+name: Hello-test
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: null
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello word
+        run: echo "Bonjour tout le monde"
+  goodbaye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Good baye
+        run: echo "Goodbaye"
