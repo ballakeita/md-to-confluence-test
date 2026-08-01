@@ -15,3 +15,12 @@ jobs:
     steps:
       - name: Good baye
         run: echo "Goodbaye"
+
+  TerraformInit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: TFE initialization
+        run: terrform init
