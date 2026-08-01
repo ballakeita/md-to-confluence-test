@@ -35,4 +35,6 @@ jobs:
         run: terraform version
 
       - name: TFE initialization
-        run: terraform init -upgrade
+        run: terraform init
+        env:
+          TF_PLUGIN_CACHE_DIR: $HOME/.terraform.d/plugin-cache
