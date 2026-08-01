@@ -23,4 +23,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: TFE initialization
-        run: terrform init
+        run: terraform init
