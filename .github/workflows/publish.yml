@@ -5,25 +5,24 @@ on:
       - main
   workflow_dispatch: null
 jobs:
-  hello:
-    runs-on: ubuntu-latest
-    steps:
-      - name: hello word
-        run: echo "Bonjour tout le monde"
-  goodbaye:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Good baye
-        run: echo "Goodbaye"
-
   TerraformInit:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
+      - name: Create Terraform plugin cache directory
+        run: mkdir -p "$HOME/.terraform.d/plugin-cache"
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v4
+
+      - name: caching Providers
+        uses: actions/cache@v5
+        with:
+          path: ~/.terraform.d/plugin-cache
+          key: ${{ runner.os }}-terraform-${{ hashFiles('**/.terraform.lock.hcl') }} # ← swap for option ② if no lock file
+          restore-keys: |
+            ${{ runner.os }}-terraform-
 
       - name: Terraform version
         run: terraform version
