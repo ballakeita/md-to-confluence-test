@@ -35,4 +35,4 @@ jobs:
         run: terraform version
 
       - name: TFE initialization
-        run: terraform init
+        run: terraform init -upgrade
