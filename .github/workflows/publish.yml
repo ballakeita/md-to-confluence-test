@@ -8,6 +8,13 @@ jobs:
   TerraformInit:
     runs-on: ubuntu-latest
     steps:
+      - name: show environnement
+        run: |
+          hostname
+          whoami
+          pwd
+          uname -a
+
       - name: Checkout repository
         uses: actions/checkout@v5
       - name: Create Terraform plugin cache directory
